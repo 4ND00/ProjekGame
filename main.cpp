@@ -1,6 +1,27 @@
 #include <iostream>
+#include <ncurses.h>
+using namespace std;
+
+void initPapan(){
+  
+}
+
+void gambarPapan(){
+  
+}
+
+void pemain(){
+  
+}
+
+void cekMenang(){
+  
+}
+
+void cekSeri(){
+  
+}
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
