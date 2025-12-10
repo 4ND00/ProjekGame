@@ -35,5 +35,13 @@ void cekSeri(){
 }
 
 int main() {
-    return 0;
+    initscr();   
+    noecho();
+
+    initBoard();  
+    drawBoard();  
+
+    getch();      
+    endwin();     
+    return 0;
 }
