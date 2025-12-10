@@ -1,6 +1,4 @@
-#include <iostream>
 #include <ncurses.h>
-using namespace std;
 
 void initPapan(){
   char board[3][3];
