@@ -49,8 +49,51 @@ void drawBoard() {
 }
 
 
-void pemain(){
-  
+void pemain() {
+    char input = getch();
+    
+    if (input == 'q' || input == 'Q') {
+        gameAktif = false;
+        return;
+    }
+    
+    if (input >= '1' && input <= '9') {
+        int posisi = input - '1';
+        int baris = posisi / 3;
+        int kolom = posisi % 3;
+        
+        if (papan[baris][kolom] != 'X' && papan[baris][kolom] != 'O') {
+            papan[baris][kolom] = pemainSekarang;
+            
+            if (cekMenang()) {
+                gambarPapan();
+                mvprintw(12, 10, "PEMAIN ");
+                mvaddch(12, 17, pemainSekarang);
+                mvprintw(12, 18, " MENANG!");
+                mvprintw(13, 10, "Tekan tombol apapun untuk keluar...");
+                refresh();
+                getch();
+                gameAktif = false;
+            } else if (cekSeri()) {
+                gambarPapan();
+                mvprintw(12, 10, "PERMAINAN SERI!");
+                mvprintw(13, 10, "Tekan tombol apapun untuk keluar...");
+                refresh();
+                getch();
+                gameAktif = false;
+            } else {
+                if (pemainSekarang == 'X') {
+                    pemainSekarang = 'O';
+                } else {
+                    pemainSekarang = 'X';
+                }
+            }
+        } else {
+            mvprintw(12, 10, "Posisi sudah terisi! Tekan tombol untuk lanjut...");
+            refresh();
+            getch();
+        }
+    }
 }
 
 bool cekMenang() {
