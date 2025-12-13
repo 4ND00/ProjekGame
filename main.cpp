@@ -28,7 +28,20 @@ void cekMenang(){
   
 }
 
-void cekSeri(){
+bool cekSeri() {
+
+    for (int y = 0; y < 3; y++) {
+        for (int x = 0; x < 3; x++) {
+            if (papan[y][x] == ' ')
+                return false;
+        }
+    }
+
+    return true;
+}
+
+    return true;
+}
   
 }
 
